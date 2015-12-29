@@ -1,5 +1,8 @@
 #!/bin/bash
 #
+# Author: ladislav.babjak@gmail.com
+# Version: 1.0
+#
 # At times I needed a simple tool to track changes in the selected files.
 # I tested it on multiple platforms in the production environment.
 # Script needed only one configuration file files_monitor.conf.
