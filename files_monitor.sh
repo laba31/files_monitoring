@@ -225,8 +225,8 @@ then
     mkdir ${DATA_DIR}
 fi
 
-# Stores contents of config file in an array
-export FILES_LIST=( $(cat ${CONF}) )
+# Stores contents of config file in an array without comments
+export FILES_LIST=( $(grep -v ^# ${CONF}) )
 # Replacement for "seq" utility. OpenBSD doesn't have "seq", but "jot".
 SEQ="echo {0..$((${#FILES_LIST[@]} - 1))}"
 
