@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # Author: ladislav.babjak@gmail.com
 # Version: 1.0
@@ -7,7 +7,6 @@
 # I tested it on multiple platforms in the production environment.
 # Script needed only one configuration file files_monitor.conf.
 # One line, one file for monitoring.
-# Comments in config file is not supported.
 # Each change is recorded and sent by email.
 # 
 # This script I use on these OS:
