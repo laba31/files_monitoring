@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #
 # Author: ladislav.babjak@gmail.com
-# Version: 1.01
+# Version: 1.02
 #
 # At times I needed a simple tool to track changes in the selected files.
 # I tested it on multiple platforms in the production environment.
