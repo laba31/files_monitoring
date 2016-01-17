@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #
 # Author: ladislav.babjak@gmail.com
-# Version: 1.0
+# Version: 1.01
 #
 # At times I needed a simple tool to track changes in the selected files.
 # I tested it on multiple platforms in the production environment.
@@ -277,7 +277,8 @@ do
             echo "${DATE} Data of ${FILES_LIST[$ELEMENT]} do not changed" >> ${LOG_FILE}
         else
             # content of file was changed it - logging 
-            echo "${DATE} Data of ${FILES_LIST[$ELEMENT]} was changed old cksum: ${OLD_CKSUM_FILE_DATA} new cksum: ${CKSUM_FILE_DATA}" | tee -a ${EMAIL_BODY} >> ${LOG_FILE}
+            echo -e "${DATE} Data of ${FILES_LIST[$ELEMENT]} was changed\n\told cksum: ${OLD_CKSUM_FILE_DATA}\n\tnew cksum: ${CKSUM_FILE_DATA}" | tee -a ${EMAIL_BODY} >> ${LOG_FILE}
+            echo >> ${EMAIL_BODY}
             # rename record for backup
             mv ${DATA_DIR}/${CKSUM_FILE_NAME}.cksum ${DATA_DIR}/${CKSUM_FILE_NAME}.old_cksum
             # actual cksum of data write to record
@@ -289,7 +290,8 @@ do
         then
             echo "${DATE} Attributes of ${FILES_LIST[$ELEMENT]} do not changed" >> ${LOG_FILE}
         else
-            echo "${DATE} Attributes of ${FILES_LIST[$ELEMENT]} was changed old attributes: ${OLD_STAT} new attributes: ${STAT_FILE}" | tee -a ${EMAIL_BODY} >> ${LOG_FILE}
+            echo -e "${DATE} Attributes of ${FILES_LIST[$ELEMENT]} was changed\n\told attributes: ${OLD_STAT}\n\tnew attributes: ${STAT_FILE}" | tee -a ${EMAIL_BODY} >> ${LOG_FILE}
+            echo >> ${EMAIL_BODY}
             # rename record for backup
             mv ${DATA_DIR}/${CKSUM_FILE_NAME}.stat ${DATA_DIR}/${CKSUM_FILE_NAME}.old_stat
             # actual attributes
